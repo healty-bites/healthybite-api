@@ -1,5 +1,6 @@
 package com.healthybites.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,21 +14,25 @@ public class Comentario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "mensaje", nullable = false)
+    private String mensaje;
+
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "autor_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_COMENTARIO_CLIENTE"))
     private Cliente autorID;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "publicacion_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_COMENTARIO_PUBLICACION"))
     private Publicacion publicacionID;
 
-    @Column(name = "mensaje", nullable = false)
-    private String mensaje;
-
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "comentario_padre_id", referencedColumnName = "id")
     private Comentario comentarioPadre;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "comentarioPadre", cascade = CascadeType.ALL)
     private List<Comentario> comentariosHijos;
 }

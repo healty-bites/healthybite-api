@@ -1,5 +1,6 @@
 package com.healthybites.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,6 +21,7 @@ public class Progreso {
     @JoinColumn(name = "cliente_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_PROGRESO_CLIENTE"))
     private Cliente cliente;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "progreso", cascade = CascadeType.ALL)
     private List<RegistroProgreso> registro;
 }
