@@ -1,5 +1,6 @@
 package com.healthybites.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ public class Publicacion {
     @Column(name = "contenido", nullable = false)
     private String contenido;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "grupo_interes_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_PUBLICACION_GRUPOINTERES"))
     private GrupoInteres grupoInteres;
