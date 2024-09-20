@@ -1,4 +1,8 @@
 package com.healthybites.repository;
 
-public interface RegistrarProgreso {
+import com.healthybites.model.entity.RegistroProgreso;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RegistrarProgresoRepository extends JpaRepository<RegistroProgreso, Integer> {
+
 }
