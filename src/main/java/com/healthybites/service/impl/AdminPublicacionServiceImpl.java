@@ -13,7 +13,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class AdminPublicacionRepositoryImpl implements AdminPublicacionService {
+public class AdminPublicacionServiceImpl implements AdminPublicacionService {
 
     private final PublicacionRepository publicacionRepository;
 

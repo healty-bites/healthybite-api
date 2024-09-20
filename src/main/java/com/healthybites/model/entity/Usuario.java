@@ -1,7 +1,9 @@
 package com.healthybites.model.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @MappedSuperclass
 public abstract class Usuario {
     @Id
