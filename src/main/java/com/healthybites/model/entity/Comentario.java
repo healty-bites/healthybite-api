@@ -14,6 +14,7 @@ public class Comentario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "autor_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_COMENTARIO_CLIENTE"))
     private Cliente autorID;
@@ -26,6 +27,7 @@ public class Comentario {
     @JoinColumn(name = "publicacion_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_COMENTARIO_PUBLICACION"))
     private Publicacion publicacionID;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "comentario_padre_id", referencedColumnName = "id")
     private Comentario comentarioPadre;
