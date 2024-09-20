@@ -14,13 +14,13 @@ public class Comentario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "mensaje", nullable = false)
-    private String mensaje;
-
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "autor_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "FK_COMENTARIO_CLIENTE"))
     private Cliente autorID;
+
+    @Column(name = "mensaje", nullable = false)
+    private String mensaje;
 
     @JsonIgnore
     @ManyToOne
