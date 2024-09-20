@@ -1,12 +1,12 @@
 -- Administradores
-INSERT INTO public.administrador (id, nombre, email, contrasena)
+INSERT INTO public.administrador (nombre, email, contrasena)
 VALUES
-    (1, 'Ana Perez', 'ana.perez@example.com', 'password123'),
-    (2, 'Luis Gomez', 'luis.gomez@example.com', 'password456'),
-    (3, 'Maria Rodriguez', 'maria.rodriguez@example.com', 'password789'),
-    (4, 'Juan Fernandez', 'juan.fernandez@example.com', 'password987'),
-    (5, 'Sofia Morales', 'sofia.morales@example.com', 'password654'),
-    (6, 'Carlos Lopez', 'carlos.lopez@example.com', 'password321')
+    ('Ana Perez', 'ana.perez@example.com', 'password123'),
+    ('Luis Gomez', 'luis.gomez@example.com', 'password456'),
+    ('Maria Rodriguez', 'maria.rodriguez@example.com', 'password789'),
+    ('Juan Fernandez', 'juan.fernandez@example.com', 'password987'),
+    ('Sofia Morales', 'sofia.morales@example.com', 'password654'),
+    ('Carlos Lopez', 'carlos.lopez@example.com', 'password321')
     ON CONFLICT DO NOTHING;
 
 -- Grupos de Interés

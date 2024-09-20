@@ -46,6 +46,10 @@ public class AdminAdministradorServiceImpl implements AdminAdministradorService 
     @Override
     public Administrador update(Integer id, Administrador updateContenido) {
         Administrador administradorFromDb = findById(id);
+        administradorFromDb.setContrasena(updateContenido.getContrasena());
+        administradorFromDb.setNombre(updateContenido.getNombre());
+        administradorFromDb.setEmail(updateContenido.getEmail());
+        administradorFromDb.setContrasena(updateContenido.getContrasena());
         administradorFromDb.setPlanCreado(updateContenido.getPlanCreado());
         administradorFromDb.setContenido(updateContenido.getContenido());
         return administradorRepository.save(administradorFromDb);
